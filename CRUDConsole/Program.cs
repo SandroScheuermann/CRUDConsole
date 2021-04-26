@@ -197,7 +197,7 @@ namespace CRUDConsole
                     Console.Clear();
                     Console.WriteLine("Digite o nome da chamada : \n");
                     tituloConstrutor = Console.ReadLine();
-                    if (tituloConstrutor.Length < 1) { break; }
+                    if (tituloConstrutor.Length > 0) { break; }
                 }
 
                 while (true)
@@ -205,7 +205,7 @@ namespace CRUDConsole
                     Console.Clear();
                     Console.WriteLine("Digite a descrição da chamada : \n");
                     descConstrutor = Console.ReadLine();
-                    if (descConstrutor.Length < 1) { break; }
+                    if (descConstrutor.Length > 0) { break; }
                 }
 
                 while (true)
@@ -213,7 +213,7 @@ namespace CRUDConsole
                     Console.Clear();
                     Console.WriteLine("Digite o equipamento da chamada : \n");
                     equipamentoConstrutor = Console.ReadLine();
-                    if (equipamentoConstrutor.Length < 1) { break; }
+                    if (equipamentoConstrutor.Length > 0) { break; }
                 }
                 while (true)
                 {
@@ -239,13 +239,11 @@ namespace CRUDConsole
             }
             else
             {
-
                 for (int i = 0; i < chamadaArray.Length; i++)
                 {
                     chamadaArray[i].mostraDados();
                     Console.WriteLine("\n");
                 }
-
             }
 
         }
@@ -285,15 +283,12 @@ namespace CRUDConsole
                     break;
                 }
             }
-
             if (indice < chamadaArray.Length && indice >= 0)
             {
                 for (int i = indice + 1; i < chamadaArray.Length; i++)
                 {
                     chamadaArray[i - 1] = chamadaArray[i];
-
                 }
-                Console.WriteLine("sexo");
                 Array.Resize(ref chamadaArray, chamadaArray.Length - 1);
             }
         }
